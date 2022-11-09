@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>TREINENINFO</title>
+</head>
+<body onload="startTime()"></body>
+<body>
+    <div id="bord">
+        <div id="links">
+            <div id="vierkant">
+                <div class="perron">
+                    13b
+                </div>
+                <div id="kleinvierkantje">
+                    <div class="spoor">
+                        spoor
+                    </div>
+                   
+                </div>
+                
+
+            </div>
+        </div>
+        <div id="rechts">
+            <div class="klok"><img src="https://cdn.webshopapp.com/shops/286573/files/405381366/1100x720x2/ptmd-klok-larz-gold-large.jpg" alt="klok" width="280" height="250"></div>
+            
+        </div>
+        <div id="midden">
+            <div id="steden">
+                <div class="deventer2">DEVENTER
+                </div>
+            </div>
+            <div id="nietrijden1">
+                <div class="leeuwarden"> 21:35 Intercity leeuwarden rijdt niet</div>
+            </div>
+            <div id="nietrijden2">
+                <div class="deventer"> 13:55 Intercity deventer rijdt niet</div>
+            </div>
+            <div id="txt"></div>
+            <div id="intercity">
+                <div class="intercity"> INTERCITY </div>
+            </div>
+
+        </div>
+        <script>
+            function startTime() {
+              const today = new Date();
+              let h = today.getHours();
+              let m = today.getMinutes();
+              let s = today.getSeconds();
+              m = checkTime(m);
+              s = checkTime(s);
+              document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+              setTimeout(startTime, 1000);
+            }
+            
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+        </script>
+    </div>
+</body>
+</html>
